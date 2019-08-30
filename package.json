@@ -1,0 +1,41 @@
+{
+  "version": "0.0.2",
+  "name": "baiji-cz-rule",
+  "description": "baiji git commit rules",
+  "main": "index.js",
+  "homepage": "https://github.com/gaochengyidlmu/baiji-cz-rule.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gaochengyidlmu/baiji-cz-rule.git"
+  },
+  "keywords": [
+    "git",
+    "commit",
+    "cz",
+    "custom"
+  ],
+  "author": "gaochengyi<gaochengyidlmu@163.com>",
+  "license": "MIT",
+  "dependencies": {
+    "editor": "1.0.0",
+    "find-config": "0.3.0",
+    "temp": "0.8.3",
+    "winston": "2.1.0",
+    "word-wrap": "1.1.0",
+    "inquirer": "1.2.3"
+  },
+  "devDependencies": {
+    "codecov.io": "0.1.6",
+    "commitizen": "2.9.5",
+    "eslint": "1.9.0",
+    "istanbul": "0.4.0",
+    "jasmine-node": "1.14.5",
+    "rewire": "2.5.0",
+    "semantic-release": "4.3.5"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./index.js"
+    }
+  }
+}
