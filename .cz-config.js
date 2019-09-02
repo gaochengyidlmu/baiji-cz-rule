@@ -67,6 +67,18 @@ module.exports = {
         message: '描述代码影响范围（可选）'
       }
     },
+    '【Merge】': {
+      value: '【Merge】',
+      name: 'Merge:      合并分支',
+      subject: {
+        prefix: 'Merge 关系: ',
+        message: 'Merge 关系？(e.g. Merge feature/XXXX into master)'
+      },
+      body: {
+        prefix: '内容: ',
+        message: 'Merge 内容是什么'
+      }
+    },
     '【重构】': {
       value: '【重构】',
       name: '重构:      重构模块功能',
