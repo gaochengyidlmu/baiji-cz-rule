@@ -1,6 +1,6 @@
 # baiji-cz-rule
 
-本项目修改自 [baiji-cz-rule](https://github.com/lsa2127291/baiji-cz-rule)
+本项目修改自 [cz-custom-enhanced](https://github.com/lsa2127291/cz-custom-enhanced)
 
 ![screenshot](screenshot.png)
 

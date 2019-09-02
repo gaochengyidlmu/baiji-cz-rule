@@ -69,7 +69,7 @@ module.exports = {
     },
     '【Merge】': {
       value: '【Merge】',
-      name: 'Merge:      合并分支',
+      name: 'Merge:     合并分支',
       subject: {
         prefix: 'Merge 关系: ',
         message: 'Merge 关系？(e.g. Merge feature/XXXX into master)'
