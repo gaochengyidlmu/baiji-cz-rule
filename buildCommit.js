@@ -7,10 +7,10 @@ var wrap = require('word-wrap');
 module.exports = function buildCommit(answers, config) {
 
   var maxLineWidth = 100;
-  var entry = config.entry
+  var entry = config.entry;
   var wrapOptions = {
     trim: true,
-    newline: '\n',
+    newline: '  ',
     indent:'',
     width: maxLineWidth
   };
@@ -22,7 +22,7 @@ module.exports = function buildCommit(answers, config) {
   }
 
   function addSubject(subject) {
-    var subjectPrefix = (entry[answers.type].subject && entry[answers.type].subject.prefix) || ''
+    var subjectPrefix = (entry[answers.type].subject && entry[answers.type].subject.prefix) || '';
     return subjectPrefix + subject.trim();
   }
 
@@ -49,7 +49,7 @@ module.exports = function buildCommit(answers, config) {
 
   var result = head;
   if (body) {
-    var bodyPrefix = (entry[answers.type].body && entry[answers.type].body.prefix) || ''
+    var bodyPrefix = (entry[answers.type].body && entry[answers.type].body.prefix) || '';
     result += '\n' + bodyPrefix + body;
   }
   if (breaking) {
