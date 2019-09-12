@@ -61,10 +61,6 @@ module.exports = {
       body: {
         prefix: '方案: ',
         message: '简述解决方案'
-      },
-      footer: {
-        prefix: '影响范围: ',
-        message: '描述代码影响范围（可选）'
       }
     },
     '【Merge】': {
@@ -86,9 +82,13 @@ module.exports = {
         prefix: '模块: ',
         message: '重构了什么代码模块'
       },
-      body: {
+      subject: {
         prefix: '原因: ',
         message: '简述为什么重构'
+      },
+      body: {
+        prefix: '方案: ',
+        message: '简述解决方案'
       }
     },
     '【测试用例】': {
