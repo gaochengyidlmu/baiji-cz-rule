@@ -23,17 +23,17 @@
 
 module.exports = {
   entry: {
-    '【新增】': {
-      value: '【新增】',
-      name: '新增:      新增模块功能',
-      subject: {
-        prefix: '模块: ',
-        message: '新增了什么模块'
+    '【Jira关联分支】': {
+      value: '【Jira关联分支】',
+      name: 'Jira关联:  在Jira评论中关联分支名',
+      issue: {
+        prefix: '任务名: ',
+        message: '任务名: (如 BMYAPP-1)',
       },
-      body: {
-        prefix: '作用: ',
-        message: '简述这个模块是做什么用的'
-      }
+      subject: {
+        prefix: '分支名: ',
+        message: '分支名: '
+      },
     },
     '【更新】': {
       value: '【更新】',
@@ -45,14 +45,18 @@ module.exports = {
       body: {
         prefix: '原因: ',
         message: '简述为什么修改'
-      }
+      },
+      footer: {
+        prefix: '任务名: ',
+        message: '任务名: (如 BMYAPP-1)',
+      },
     },
     '【修复】': {
       value: '【修复】',
       name: '修复:      修复Bug',
       scope: {
-        custom: true,
-        message: '描述解决了什么问题，如果有Bug号的时候，带上Bug号'
+        prefix: '任务名: ',
+        message: '任务名: (如 BMYAPP-1)',
       },
       subject: {
         prefix: '原因: ',
@@ -61,7 +65,7 @@ module.exports = {
       body: {
         prefix: '方案: ',
         message: '简述解决方案'
-      }
+      },
     },
     '【Merge】': {
       value: '【Merge】',
@@ -70,15 +74,27 @@ module.exports = {
         prefix: 'Merge 关系: ',
         message: 'Merge 关系？(e.g. Merge feature/XXXX into master)'
       },
+    },
+    '【新增】': {
+      value: '【新增】',
+      name: '新增:      新增模块功能',
+      subject: {
+        prefix: '模块: ',
+        message: '新增了什么模块'
+      },
       body: {
-        prefix: '内容: ',
-        message: 'Merge 内容是什么'
-      }
+        prefix: '作用: ',
+        message: '简述这个模块是做什么用的'
+      },
+      footer: {
+        prefix: '任务名: ',
+        message: '任务名: (如 BMYAPP-1)',
+      },
     },
     '【重构】': {
       value: '【重构】',
       name: '重构:      重构模块功能',
-      subject: {
+      scope: {
         prefix: '模块: ',
         message: '重构了什么代码模块'
       },
@@ -89,15 +105,11 @@ module.exports = {
       body: {
         prefix: '方案: ',
         message: '简述解决方案'
-      }
+      },
+      footer: {
+        prefix: '任务名: ',
+        message: '任务名: (如 BMYAPP-1)',
+      },
     },
-    '【测试用例】': {
-      value: '【测试用例】',
-      name: '测试用例:  添加测试用例',
-      subject: {
-        prefix: '用例: ',
-        message: '简述增加某个模块的测试用例'
-      }
-    }
   },
 };
