@@ -23,21 +23,29 @@
 
 module.exports = {
   entry: {
-    '【Jira关联分支】': {
-      value: '【Jira关联分支】',
-      name: 'Jira关联:  在Jira评论中关联分支名',
+    '【更新&关联Jira】': {
+      value: '【更新&关联Jira】',
+      name: '更新&关联Jira:   更新功能，并在Jira评论中关联分支名',
       issue: {
         prefix: '任务名: ',
         message: '任务名: (如 BMYAPP-1)',
       },
-      subject: {
+      branch: {
         prefix: '分支名: ',
         message: '分支名: '
+      },
+      subject: {
+        prefix: '模块: ',
+        message: '更新了什么模块'
+      },
+      body: {
+        prefix: '原因: ',
+        message: '简述为什么修改'
       },
     },
     '【更新】': {
       value: '【更新】',
-      name: '更新:      更新功能',
+      name: '更新:            更新功能',
       subject: {
         prefix: '模块: ',
         message: '更新了什么模块'
@@ -53,7 +61,7 @@ module.exports = {
     },
     '【修复】': {
       value: '【修复】',
-      name: '修复:      修复Bug',
+      name: '修复:            修复Bug',
       scope: {
         prefix: '任务名: ',
         message: '任务名: (如 BMYAPP-1)',
@@ -69,7 +77,7 @@ module.exports = {
     },
     '【Merge】': {
       value: '【Merge】',
-      name: 'Merge:     合并分支',
+      name: 'Merge:           合并分支',
       subject: {
         prefix: 'Merge 关系: ',
         message: 'Merge 关系？(e.g. Merge feature/XXXX into master)'
@@ -77,7 +85,7 @@ module.exports = {
     },
     '【新增】': {
       value: '【新增】',
-      name: '新增:      新增模块功能',
+      name: '新增:            新增模块功能',
       subject: {
         prefix: '模块: ',
         message: '新增了什么模块'
@@ -93,7 +101,7 @@ module.exports = {
     },
     '【重构】': {
       value: '【重构】',
-      name: '重构:      重构模块功能',
+      name: '重构:            重构模块功能',
       scope: {
         prefix: '模块: ',
         message: '重构了什么代码模块'

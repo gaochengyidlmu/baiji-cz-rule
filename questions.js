@@ -33,6 +33,7 @@ module.exports = {
     messages.footer = messages.footer || 'List any ISSUES CLOSED by this change (optional). E.g.: #31, #34:\n';
     messages.confirmCommit = messages.confirmCommit || 'Are you sure you want to proceed with the commit above?'
     messages.issue = messages.issue || 'What\'s the issue name.\n'
+    messages.branch = messages.branch || 'What\'s the branch name.\n'
     var questions = [
       {
         type: 'list',
@@ -92,6 +93,32 @@ module.exports = {
       },
       {
         type: 'input',
+        name: 'issue',
+        message: function (answers) {
+          return entry[answers.type].issue ? entry[answers.type].issue.message : message.issue
+        },
+        validate: function(value) {
+          return !!value;
+        },
+        when: (answers) => {
+          return entry[answers.type].issue;
+        }
+      },
+      {
+        type: 'input',
+        name: 'branch',
+        message: function (answers) {
+          return entry[answers.type].branch ? entry[answers.type].branch.message : message.branch
+        },
+        validate: function(value) {
+          return !!value;
+        },
+        when: (answers) => {
+          return entry[answers.type].branch;
+        }
+      },
+      {
+        type: 'input',
         name: 'subject',
         message: function (answers) {
           return entry[answers.type].subject ? entry[answers.type].subject.message : message.subject
@@ -104,19 +131,6 @@ module.exports = {
         },
         when: (answers) => {
           return entry[answers.type].subject;
-        }
-      },
-      {
-        type: 'input',
-        name: 'issue',
-        message: function (answers) {
-          return entry[answers.type].issue ? entry[answers.type].issue.message : message.issue
-        },
-        validate: function(value) {
-          return !!value;
-        },
-        when: (answers) => {
-          return entry[answers.type].issue;
         }
       },
       {

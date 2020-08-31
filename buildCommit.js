@@ -26,6 +26,15 @@ module.exports = function buildCommit(answers, config) {
     return subjectPrefix + subject.trim();
   }
 
+  function addIssue(issue) {
+    var issuePrefix = (entry[answers.type].issue && entry[answers.type].issue.prefix) || '';
+    return issuePrefix + issue.trim();
+  }
+  function addBranch(branch) {
+    var branchPrefix = (entry[answers.type].branch && entry[answers.type].branch.prefix) || '';
+    return branchPrefix + branch.trim();
+  }
+
   function escapeSpecialChars(result) {
     var specialChars = ['\`'];
 
@@ -46,6 +55,8 @@ module.exports = function buildCommit(answers, config) {
 
   var breaking = wrap(answers.breaking, wrapOptions);
   var footer = wrap(answers.footer, wrapOptions);
+  var issue = wrap(answers.issue, wrapOptions);
+  var branch = wrap(answers.branch, wrapOptions);
 
   var result = head;
   if (body) {
@@ -59,6 +70,12 @@ module.exports = function buildCommit(answers, config) {
   if (footer) {
     var footerPrefix = entry && entry[answers.type].footer.prefix ? entry[answers.type].footer.prefix : 'ISSUES CLOSED:';
     result += '  ' + footerPrefix + footer;
+  }
+  if (issue) {
+    result += '  ' + addIssue(answers.issue);
+  }
+  if (branch) {
+    result += '  ' + addBranch(answers.branch);
   }
   return escapeSpecialChars(result);
 };
